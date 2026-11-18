@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Backend API configuration
 const API = axios.create({
-    baseURL: "http://localhost:5000/api/tasks"
+    baseURL: "/api/tasks"
 });
 
 // Fetch all tasks
