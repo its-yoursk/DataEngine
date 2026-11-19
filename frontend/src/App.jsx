@@ -10,6 +10,7 @@ import {
 
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
+import FileUpload from "./components/FileUpload";
 
 import "./App.css";
 
@@ -95,6 +96,8 @@ function App() {
             <h1>DataEngine Task</h1>
 
             <TaskForm onTaskAdded={handleTaskAdded} />
+
+            <FileUpload />
 
             {error && <p>{error}</p>}
 
