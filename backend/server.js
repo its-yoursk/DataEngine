@@ -3,6 +3,7 @@ require("dotenv").config();
 
 const cors = require("cors");
 const taskRoutes = require("./routes/taskRoutes");
+const uploadRoutes = require("./routes/uploadRoutes");
 
 const express = require("express");
 const connectDB = require("./config/db");
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use(cors());
 app.use("/api/tasks", taskRoutes);
+app.use("/api/uploads", uploadRoutes);
 
 // Basic test route
 app.get("/", (req, res) => {
