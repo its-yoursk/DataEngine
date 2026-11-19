@@ -13,10 +13,10 @@ function TaskList({ tasks, onToggle, onDelete, onEdit }) {
                 <p>No tasks available.</p>
             ) : (
                 tasks.map((task) => (
-                    <div key={task._id}>
-                        {editingTaskId === task._id ? (
+                    <div key={task.id}>
+                        {editingTaskId === task.id ? (
                             <EditTask
-                                key={task._id}
+                                key={task.id}
                                 task={task}
                                 onSave={onEdit}
                                 onCancel={() => setEditingTaskId(null)}
@@ -37,11 +37,11 @@ function TaskList({ tasks, onToggle, onDelete, onEdit }) {
                                         : "Mark Completed"}
                                 </button>
 
-                                <button onClick={() => setEditingTaskId(task._id)}>
+                                <button onClick={() => setEditingTaskId(task.id)}>
                                     Edit
                                 </button>
 
-                                <button onClick={() => onDelete(task._id)}>
+                                <button onClick={() => onDelete(task.id)}>
                                     Delete
                                 </button>
                             </>

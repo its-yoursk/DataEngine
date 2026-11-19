@@ -49,13 +49,13 @@ function App() {
     // Toggle task completion
     const handleToggle = async (task) => {
         try {
-            const updatedTask = await updateTask(task._id, {
+            const updatedTask = await updateTask(task.id, {
                 completed: !task.completed
             });
 
             setTasks((previousTasks) =>
                 previousTasks.map((item) =>
-                    item._id === task._id ? updatedTask : item
+                    item.id === task.id ? updatedTask : item
                 )
             );
         } catch (err) {
@@ -70,7 +70,7 @@ function App() {
             await deleteTask(id);
 
             setTasks((previousTasks) =>
-                previousTasks.filter((task) => task._id !== id)
+                previousTasks.filter((task) => task.id !== id)
             );
         } catch (err) {
             console.error(err);
@@ -84,7 +84,7 @@ function App() {
 
         setTasks((previousTasks) =>
             previousTasks.map((task) =>
-                task._id === id ? updatedTask : task
+                task.id === id ? updatedTask : task
             )
         );
     };

@@ -19,7 +19,7 @@ function EditTask({ task, onSave, onCancel }) {
             setLoading(true);
             setError("");
 
-            await onSave(task._id, {
+            await onSave(task.id, {
                 title: title.trim(),
                 description: description.trim()
             });
